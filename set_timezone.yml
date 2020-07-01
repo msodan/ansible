@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: set timezone to Europe/Berlin
+      timezone:
+        name: Europe/Berlin
+
+    - name: set RTC in local TZ no
+      command: "timedatectl set-local-rtc 0"
+
