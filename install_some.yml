@@ -1,0 +1,15 @@
+---
+- hosts: "{{ env }}"
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: install some packages
+      package:
+        name:
+          - unzip
+          - htop
+          - netcat
+          - tcpdump
+        state: present
+
